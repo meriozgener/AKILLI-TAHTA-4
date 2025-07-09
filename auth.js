@@ -1,4 +1,3 @@
-// Firebase bağlantısı
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
@@ -10,7 +9,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBJfAzlMVWWtn19ldJ6uZZLFVNE2wt5Jyw",
   authDomain: "akilli-tahta-3f5e8.firebaseapp.com",
   projectId: "akilli-tahta-3f5e8",
- storageBucket: "akilli-tahta-3f5e8.appspot.com",
+  storageBucket: "akilli-tahta-3f5e8.appspot.com",
   messagingSenderId: "378982949385",
   appId: "1:378982949385:web:9a204b6894ad3648370ed8"
 };
@@ -18,7 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Giriş
 window.login = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -38,7 +36,6 @@ window.login = () => {
     });
 };
 
-// Kayıt
 window.signup = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
