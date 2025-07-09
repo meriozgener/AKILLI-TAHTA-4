@@ -2,120 +2,56 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akıllı Tahta V4 - Giriş</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Akıllı Tahta Giriş</title>
+  <script type="module" src="auth.js"></script>
   <style>
-    /* Genel stil dosyan */
     body {
-        font-family: 'Nunito', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #f0f2f5;
-        margin: 0;
-        color: #333;
+      font-family: Arial;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .container {
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        width: 90%;
-        max-width: 500px;
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
-        color: #4CAF50; /* Yeşil */
-        margin-bottom: 25px;
-        font-size: 2.5em;
+    input, select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
     }
-    .role-selection {
-        margin-top: 30px;
-        text-align: left;
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
     }
-    .role-group {
-        background-color: #e8f5e9; /* Açık yeşil arka plan */
-        border: 1px solid #c8e6c9;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 25px;
-        transition: box-shadow 0.3s ease;
-    }
-    .role-group:hover {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .role-group h2 {
-        color: #388E3C; /* Koyu yeşil */
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 1.5em;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .role-group .options {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-    .btn-option {
-        display: block;
-        padding: 12px 20px;
-        background-color: #66BB6A; /* Orta yeşil */
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 1.1em;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .btn-option:hover {
-        background-color: #4CAF50; /* Koyu yeşil */
-        transform: translateY(-2px);
-    }
-    .main-action-btn {
-        margin-top: 30px;
-        padding: 15px 30px;
-        background-color: #2196F3; /* Mavi */
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.3em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .main-action-btn:hover {
-        background-color: #1976D2; /* Koyu mavi */
-        transform: translateY(-2px);
+    button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Akıllı Tahta V4</h1>
-    <p>Kim olarak devam etmek istiyorsun?</p>
-    <div class="role-selection">
-      <div class="role-group student-group">
-        <h2>🧑‍🎓 Öğrenci</h2>
-        <div class="options">
-          <a class="btn-option" href="quiz-turkce-1.html">Bireysel kullanıcı olarak devam et</a> <a class="btn-option" href="student-join-class.html">Sınıf koduyla katıl</a>
-        </div>
-      </div>
-      <div class="role-group teacher-group">
-        <h2>👩‍🏫 Öğretmen</h2>
-        <div class="options">
-          <a class="btn-option" href="teacher-create-class.html">Yeni sınıf oluştur</a>
-          <a class="btn-option" href="teacher-content-library.html">İçeriklere eriş (sınıf kurmadan)</a>
-        </div>
-      </div>
-    </div>
-    </div>
-
-  <script>
-    // JS ile dinamik seçim ve yönlendirme yapılabilir, ancak şimdilik doğrudan linkler kullanıldı.
-    // İleride daha karmaşık bir üyelik sistemi geldiğinde buraya bir JS kontrolü eklenebilir.
-  </script>
+  <div class="login-box">
+    <h2>Akıllı Tahta Giriş</h2>
+    <input type="email" id="email" placeholder="E-posta">
+    <input type="password" id="password" placeholder="Şifre">
+    <select id="role">
+      <option value="">Rol Seçin</option>
+      <option value="student">👩‍🎓 Öğrenci</option>
+      <option value="teacher">👨‍🏫 Öğretmen</option>
+    </select>
+    <button onclick="login()">Giriş Yap</button>
+    <button onclick="signup()">Kayıt Ol</button>
+    <p id="status"></p>
+  </div>
 </body>
 </html>
